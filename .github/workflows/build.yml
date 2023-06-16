@@ -3,7 +3,6 @@ on: push
 jobs:
   build-job:
     runs-on: ubuntu-latest
-    container: node:16.3.0
     steps:
       - run: node --version
         name: Check Node Version
