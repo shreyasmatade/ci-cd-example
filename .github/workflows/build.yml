@@ -1,4 +1,4 @@
-name: CI example
+name: CI example 
 on: push
 jobs:
   release-project:
