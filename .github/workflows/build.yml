@@ -28,7 +28,7 @@ jobs:
         with:
           context: ./extracted-release
           push: true
-          tags: shreyasmonty/shreyasmatade/node-rest-api:latest, shreyasmonty/shreyasmatade/node-rest-api:${{ github.run_number }}
+          tags: shreyasmonty/node-rest-api:latest, shreyasmonty/node-rest-api:${{ github.run_number }}
   release-project:
     name: Release Project
     runs-on: ubuntu-latest
