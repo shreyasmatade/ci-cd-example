@@ -12,14 +12,14 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: node-rest-api
-      - name: View content
+      - name: View content before unzip
         run: ls -R
       - name: Unzip artifact
         uses: actions/extract@v2
         with:
           archive-file: node-rest-api.zip
           destination: extracted-release
-      - name: View content
+      - name: View content after unzip
         run: ls -R
       - name: Login to DockerHub
         run: docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} -p ${{ secrets.DOCKER_HUB_PASSWORD }}
