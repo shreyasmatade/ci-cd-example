@@ -15,8 +15,14 @@ jobs:
         name: Install Dependencies
       - run: npm test
         name: Run Tests
+      - name: Archive Project Artifacts in Zip
+        uses: thedoctor0/zip-release@0.7.1
+        with:
+          type: 'zip'
+          filename: 'node-rest-api.zip'
+          exclusions: '*.git* /*node_modules/* .editorconfig'
       - name: Upload application pacakge
         uses: actions/upload-artifact@v2
         with:
           name: node-rest-api
-          path: ./
+          path: ./node-rest-api.zip
