@@ -3,6 +3,17 @@ on: push
 jobs:
   build-job:
     runs-on: ubuntu-latest
+    container: node:16.3.0
     steps:
       - run: node --version
+        name: Check Node Version
       - run: npm --version
+        name: Check NPM Version
+      - uses: actions/checkout@v2
+        name: Checkout Repository
+      - run: npm install
+        name: Install Dependencies
+      - run: npm run build
+        name: Build
+      - run: npm run 
+        name: Run Application
