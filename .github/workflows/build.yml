@@ -13,7 +13,5 @@ jobs:
         name: Checkout Repository
       - run: npm install
         name: Install Dependencies
-      - run: npm run build
-        name: Build
-      - run: npm run 
+      - run: node app.js 
         name: Run Application
