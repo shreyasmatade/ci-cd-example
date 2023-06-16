@@ -4,5 +4,5 @@ jobs:
   build-job:
     runs-on: ubuntu-latest
     steps:
-      -run: node --version
-      -run: npm --version
+      - run: node --version
+      - run: npm --version
