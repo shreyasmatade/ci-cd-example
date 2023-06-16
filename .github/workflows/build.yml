@@ -18,7 +18,7 @@ jobs:
       - name: Unzip artifact
         run: |
           mkdir extracted-release
-          apt-get -qq install unzip
+          sudo apt-get -qq install unzip
           unzip -qq downloaded-release.zip -d extracted-release
       - name: View content after unzip
         run: ls -R
