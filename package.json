@@ -1,0 +1,22 @@
+{
+  "name": "ci-cd-example",
+  "version": "1.0.0",
+  "description": "Example project to demo end to end CI/CD pipeline",
+  "main": "app.js",
+  "scripts": {
+    "test": "test "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shreyasmatade/ci-cd-example.git"
+  },
+  "keywords": [
+    "ci-cd"
+  ],
+  "author": "Shreyas Matade",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shreyasmatade/ci-cd-example/issues"
+  },
+  "homepage": "https://github.com/shreyasmatade/ci-cd-example#readme"
+}
