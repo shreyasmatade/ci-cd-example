@@ -2,7 +2,7 @@
   "name": "ci-cd-example",
   "version": "1.0.0",
   "description": "Example project to demo end to end CI/CD pipeline",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "test": "jest",
     "build": "echo Build Successful"
