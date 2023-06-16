@@ -15,5 +15,8 @@ jobs:
         name: Install Dependencies
       - run: npm test
         name: Run Tests
-      - run: node app.js 
-        name: Run Application
+      - name: Upload application pacakge
+        uses: actions/upload-artifact@v2
+        with:
+          name: node-rest-api
+          path: ./
