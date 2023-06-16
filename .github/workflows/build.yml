@@ -12,6 +12,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: node-rest-api
+          path: node-rest-api.zip
       - name: View content before unzip
         run: ls -R
       - name: Unzip artifact
