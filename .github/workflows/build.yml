@@ -14,14 +14,21 @@ jobs:
           name: node-rest-api
       - name: View content
         run: ls -R
-      - name: Build Docker Image
-        run: docker build -t node-rest-api .
+      - name: Unzip artifact
+        uses: actions/extract@v2
+        with:
+          archive-file: node-rest-api.zip
+          destination: extracted-release
+      - name: View content
+        run: ls -R
       - name: Login to DockerHub
         run: docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} -p ${{ secrets.DOCKER_HUB_PASSWORD }}
-      - name: Tag Docker Image
-        run: docker tag node-rest-api ${{ secrets.DOCKER_HUB_USERNAME }}/node-rest-api:${{ github.run_number }}
-      - name: Push Docker Image
-        run: docker push ${{ secrets.DOCKER_HUB_USERNAME }}/node-rest-api:${{ github.run_number }}
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: extracted-release
+          push: true
+          tags: shreyasmonty/node-rest-api:latest
   release-project:
     name: Release Project
     runs-on: ubuntu-latest
