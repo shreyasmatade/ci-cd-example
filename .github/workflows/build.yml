@@ -16,10 +16,10 @@ jobs:
       - name: View content before unzip
         run: ls -R
       - name: Unzip artifact
-        uses: actions/extract@v2
-        with:
-          archive-file: node-rest-api.zip
-          destination: extracted-release
+        run: |
+          mkdir extracted-release
+          apt-get -qq install unzip
+          unzip -qq downloaded-release.zip -d extracted-release
       - name: View content after unzip
         run: ls -R
       - name: Login to DockerHub
