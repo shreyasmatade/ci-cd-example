@@ -12,14 +12,13 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: node-rest-api
-          path: node-rest-api.zip
       - name: View content before unzip
-        run: ls -R
+        run: ls -la
       - name: Unzip artifact
         run: |
           mkdir extracted-release
           sudo apt-get -qq install unzip
-          unzip -qq node-rest-api.zip -d extracted-release
+          unzip -qq ./node-rest-api.zip -d extracted-release
       - name: View content after unzip
         run: ls -R
       - name: Login to DockerHub
