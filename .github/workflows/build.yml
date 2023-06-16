@@ -13,5 +13,7 @@ jobs:
         name: Checkout Repository
       - run: npm install
         name: Install Dependencies
+      - run: npm test
+        name: Run Tests
       - run: node app.js 
         name: Run Application
